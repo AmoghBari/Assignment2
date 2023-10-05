@@ -1,0 +1,19 @@
+4. Users can put a compressed file at any path of the linux file system. The name of the file will be research and the extension will be of compression type, example for gzip type extension will be .gz.
+You have to find the file and check the compression type and uncompress it.
+
+
+
+a. Command For Finding Compressed File
+   $find / -type f -iname "research.*" 2>/dev/null | grep -E "\.(zip|gz|tar|bz2|xz)$"
+
+
+. Commands According to the File Extensions
+
+.. gz     --  $tar -xzvf
+.. bz2    --  $tar -xjvf
+.. xz     --  $tar -xJvf
+.. zip    --  $unzip
+
+
+b. Unzipping File
+   $unzip /home/sigmoid/Research.zip(i.e. path to the file)

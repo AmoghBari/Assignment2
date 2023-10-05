@@ -1,0 +1,47 @@
+6. Create a service with the name showtime , after starting the service, every minute it should print the current time in a file in the user home directory.
+
+
+
+a. Create a shell script file showtime.sh and add the below lines
+   #!/bin/bash
+   date "+%Y-%m-%d %H:%M:%S" > ~/showtime.txt
+   
+   
+b. Create a systemd service unit
+   $sudo nano /etc/systemd/system/showtime.service
+   
+   
+c. Add the below lines in the showtime.service file
+   [Unit]
+   Description=Showtime Service
+   After=network.target
+
+   [Service]
+   Type=simple
+   ExecStart=/home/sigmoid/Desktop/showtime/showtime.sh(i.e path of the file)
+   Restart=always
+
+   [Install]
+   WantedBy=multi-user.target
+   
+   
+d. Reload the Systemd
+   $sudo systemctl daemon-reload
+   
+   
+e. Enabling the showtime service
+   $sudo systemctl enable showtime.service
+   $sudo systemctl start showtime.service
+   
+   
+f. Run the showtime service
+   $sudo systemctl status showtime.service
+   
+   
+g. Check the output of showtime service
+   $cat showtime.txt or nano showtime.txt
+   
+   
+h. Stop the showtime service
+   $sudo systemctl stop showtime.service
+

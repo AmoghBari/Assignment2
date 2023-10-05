@@ -1,0 +1,13 @@
+2. Create a user in your localhost, which should not be able to execute the sudo command.
+
+
+
+a. Add New User
+   $sudo useradd Username
+   
+   
+b. Add Password to Username
+   $sudo passwd Username
+   
+   
+c. The New created user does not have any sudo command rights by default.

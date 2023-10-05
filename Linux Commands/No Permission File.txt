@@ -1,0 +1,29 @@
+5. Configure your system in such a way that any user of your system creates a file then there should not be permission to do any activity in that file.
+
+
+
+a. Create a New Group
+   $sudo groupadd no_access_group
+
+
+b. Set Group Permissions in a Shell File
+   $nano ~/.bash_profile
+
+
+c. Add the below line to the Shell File
+   umask 077
+
+
+d. Add the Users to the Group
+   $sudo usermod -aG no_access_group
+
+
+e. Testing Configuration and Creating a File
+   $touch testfile.txt
+
+
+f. Listing the File Permissions
+   $ls -l testfile.txt
+   
+   
+ 

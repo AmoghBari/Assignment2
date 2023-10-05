@@ -1,0 +1,23 @@
+1. Configure smtp in localhost.
+
+
+
+a. Install Postfix
+   $sudo apt-get install postfix
+   
+   
+b. Configure Postfix
+   During Postfix Configuration you have to select "Internet Site" for mail server configuration type.
+   
+   
+c. Restart Postfix
+   $sudo systemctl restart postfix
+   
+   
+d. Create a file named 'email.txt' and add email content in it.
+   $echo "Subject Of Mail." >> email.txt
+   $echo "Your Message." >> email.txt
+   
+   
+e. Sending Mail
+   $sendmail smtp=smtp_server -xu Username -xp Password recepient@mailid.com < email.txt

@@ -1,0 +1,25 @@
+3. Configure your system in such a way that when a user types and executes a describe command from anywhere of the system 
+   it must list all the files and folders of the user's current directory.
+   
+   
+   
+a. Create Shell Script for "describe" command.
+   $nano ~/describe.sh
+   
+   
+b. Add the below lines in the sh file.
+   #!/bin/bash
+   ls -l
+   
+   
+c. Make Script Executable
+   $chmod +x ~/describe.sh
+   
+   
+d. Move Script to a Directory
+   $sudo mv ~/describe.sh /usr/local/bin/describe
+   
+   
+e. To list the contents of the system
+   $describe
+
