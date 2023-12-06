@@ -3,23 +3,12 @@
    
    
    
-a. Create Shell Script for "describe" command.
-   $nano ~/describe.sh
+a. Go to .bashrc script
+   $sudo ~/.bashrc
+
+b. Add the following lines in the script
+   alias describe = 'ls -a'
    
-   
-b. Add the below lines in the sh file.
-   #!/bin/bash
-   ls -l
-   
-   
-c. Make Script Executable
-   $chmod +x ~/describe.sh
-   
-   
-d. Move Script to a Directory
-   $sudo mv ~/describe.sh /usr/local/bin/describe
-   
-   
-e. To list the contents of the system
+c. To list the contents of the system
    $describe
 
